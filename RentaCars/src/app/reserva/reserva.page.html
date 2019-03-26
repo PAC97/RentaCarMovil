@@ -5,24 +5,19 @@
 </ion-header>
 
 <ion-content>
+<div class="ion-padding">
 <ion-grid fixed>
   <ion-row>
-    <ion-col size="4">
-      <ion-button color="primary" (click)="onClick()">
+    <ion-col size="4"><ion-button [routerLink]="['./entrega']">
+      Click me
+    </ion-button></ion-col>
+    <ion-col size="4"><ion-button (click)="onClick()">
+      Click me
+    </ion-button></ion-col>
+    <ion-col size="4"><ion-button (click)="onClick()">
         Click me
-      </ion-button>
-
-    </ion-col>
-    <ion-col size="4">
-        <ion-button color="primary" (click)="onClick()">
-            Click me
-          </ion-button>
-    </ion-col>
-    <ion-col size="4">
-        <ion-button color="primary" (click)="onClick()">
-            Click me
-          </ion-button>
-    </ion-col>
+      </ion-button></ion-col>
   </ion-row>
 </ion-grid>
+</div>
 </ion-content>
