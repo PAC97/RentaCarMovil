@@ -4,6 +4,9 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { TaskService } from "./service/task.service";
+import { Subscriber } from "../../node_modules/rxjs";
 
 @Component({
   selector: 'app-root',
@@ -21,7 +24,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.router.navigateByUrl('entrega')
+      //this.router.navigateByUrl('entrega')
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

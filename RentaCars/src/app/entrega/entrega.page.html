@@ -1,11 +1,17 @@
 <ion-header >
-  <ion-toolbar class="color">
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button>
+            
+          </ion-menu-button>
+        </ion-buttons>
     <ion-title class="tittle">entrega</ion-title>
     
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
     <ion-item>
         
         <ion-datetime placeholder="Seleccione Fecha y hora para retiro" monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic" cancelText="Cancelar" doneText="Aceptar" min="2019" display-format="DD/MM/YYYY h:mm a" picker-format="MMM DD YYYY h:mm a"></ion-datetime>
@@ -23,4 +29,13 @@
         <ion-button>
           Pagar
         </ion-button>
+        <ion-menu-toggle>
+            <ion-button expand="full">
+              Menu
+            </ion-button>
+          </ion-menu-toggle>
+          <ion-item *ngFor="let task of tasks">
+            <ion-label>{{task.EstadoID}}</ion-label>
+            <ion-label>{{task.Nombre}}</ion-label>
+          </ion-item>
 </ion-content>

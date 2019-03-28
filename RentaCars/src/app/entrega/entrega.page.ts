@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from "@ionic/angular";
+import { TaskService } from "../service/task.service";
+import { Task } from "../interfaz/task";
 
 @Component({
   selector: 'app-entrega',
@@ -7,25 +9,17 @@ import { MenuController } from "@ionic/angular";
   styleUrls: ['./entrega.page.scss'],
 })
 export class EntregaPage implements OnInit {
+  tasks: Task[] = [];
+  constructor(private menu:MenuController, private taskService: TaskService) { 
 
-  constructor(private menu:MenuController) { }
-  openFirst(){
-    this.menu.enable(true, 'first');
-    this.menu.open('first');
   }
-
-  openEnd(){
-    this.menu.open('end')
-  }
-
-  openCustom(){
-    this.menu.enable(true, 'custom');
-    this.menu.open('custom');
-  }
-
   
-
   ngOnInit() {
+    this.taskService.getAllTask()
+    .subscribe(tasks =>{
+      console.log(tasks)
+      this.tasks= tasks;
+    })
   }
 
 }
