@@ -35,7 +35,12 @@
             </ion-button>
           </ion-menu-toggle>
           <ion-item *ngFor="let task of tasks">
-            <ion-label>{{task.EstadoID}}</ion-label>
-            <ion-label>{{task.Nombre}}</ion-label>
+            
+            <ion-item>{{task.Nombre}}</ion-item>
           </ion-item>
+
+          <ion-input type="text" placeholder="Awesome Input"></ion-input>
+          <ion-button type="submit" (click)="onClick()">
+            Click me
+          </ion-button>
 </ion-content>

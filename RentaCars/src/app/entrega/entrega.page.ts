@@ -10,7 +10,7 @@ import { Task } from "../interfaz/task";
 })
 export class EntregaPage implements OnInit {
   tasks: Task[] = [];
-  constructor(private menu:MenuController, private taskService: TaskService) { 
+  constructor(private menu:MenuController, private taskService: TaskService, private task: Task) { 
 
   }
   
@@ -19,7 +19,12 @@ export class EntregaPage implements OnInit {
     .subscribe(tasks =>{
       console.log(tasks)
       this.tasks= tasks;
-    })
+    });
+
+    
+      
+    }
+    this.taskService.postReserva(task)
   }
 
 }
